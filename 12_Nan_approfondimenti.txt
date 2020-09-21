@@ -1,0 +1,21 @@
+Approfondimenti su isNaN e Number.isNaN
+Number.isNaN()    Verifica solo  se l'argomento è un NaN. Visto che non possiamo fare NaN == NaN 
+
+allora è l'unico modo.
+
+Se chiami  Number.isNaN('dffsdf') ti dà false perché  la stringa non è NaN.
+
+Se metti Number.isNaN('dffsdf'/10)   allora ti ritorna true perché dividere una stringa per un numero ritorna NaN.
+
+La funzione globale isNaN(), Fa la conversione dell'argomento prima di verificare se la conversione darebbe un NaN.
+
+isNaN('') è false perché la stringa vuota viene convertia a 0. Stessa cosa per isNaN(true), isNaN(false)  perché vengono convertite a 1 e 0 rispettivamente.
+
+Consiglio: Se vuoi verificare un'operazione, usa Number.isNaN :
+
+var res = variabile/altravar
+
+if(Number.isNaN(res)) 
+
+Puoi usare isNaN per verificare  un argomento ma tenendo conto che
+'', '  ', true, false e []  sarebbero "numeri" durante la conversione.
